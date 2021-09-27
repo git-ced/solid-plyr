@@ -51,7 +51,7 @@ The `SolidPlyr` component requires the following CSS for styling:
 
 **Using link tags**
 ```html
-<link href="https://unpkg.com/solid-plyr@0.0.0/dist/esm/index.css.map" rel="stylesheet">
+<link href="https://unpkg.com/solid-plyr@1.0.0/dist/esm/index.css.map" rel="stylesheet">
 ```
 
 **Using import**
