@@ -31,8 +31,8 @@ jobs:
         env:
           CI: true
 
-      - name: Begin bootstrap
-        run: yarn bootstrap
+      - name: Begin Test
+        run: yarn test
         env:
           CI: true
 
