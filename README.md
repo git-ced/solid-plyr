@@ -51,12 +51,12 @@ The `SolidPlyr` component requires the following CSS for styling:
 
 **Using link tags**
 ```html
-<link href="https://unpkg.com/solid-plyr@1.1.5/dist/lion-skin.min.css" rel="stylesheet">
+<link href="https://unpkg.com/solid-plyr@0.0.0/dist/esm/index.css.map" rel="stylesheet">
 ```
 
 **Using import**
 ```javascript
-import 'solid-plyr/dist/lion-skin.min.css';
+import 'solid-plyr/dist/esm/index.css.map';
 ```
 
 ## Usage

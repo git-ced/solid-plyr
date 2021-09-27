@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
 module.exports = {
-  rollup(config, options) {
+  rollup(config, _) {
     config.plugins.push(
       postcss({
         plugins: [
@@ -19,4 +19,8 @@ module.exports = {
     );
     return config;
   },
+  jest: {
+    testEnvironment: 'jsdom'
+  },
+  target: 'es2017'
 };
