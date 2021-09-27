@@ -1,5 +1,19 @@
 // ANCHOR Solid
+import { SourceInfo } from 'plyr';
 import { JSX } from 'solid-js';
+
+// ANCHOR Solid Plyr
+import { SolidPlyr } from '../../../src';
+
+const youtubeSrc: SourceInfo = {
+  type: 'video',
+  sources: [
+    {
+      src: 'yWtFb9LJs3o',
+      provider: 'youtube'
+    }
+  ]
+};
 
 export default function HomePage(): JSX.Element {
   return (
@@ -8,6 +22,9 @@ export default function HomePage(): JSX.Element {
         <h1 class="text-center text-3xl font-medium">
           Solid Plyr Demo
         </h1>
+        <div>
+          <SolidPlyr source={youtubeSrc} />
+        </div>
       </div>
     </div>
   );
