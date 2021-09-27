@@ -18,7 +18,10 @@ import { HTMLPlyrVideoElement } from '../UncontrolledPlyr/index.d';
 export default function createPlyr(
   props: CreatePlyrProps
 ): CreatePlyrResult {
-  let [plyr, setPlyr] = createSignal<HTMLPlyrVideoElement>();
+  const [
+    plyr,
+    setPlyr,
+  ] = createSignal<HTMLPlyrVideoElement>();
 
   createEffect(() => {
     const options = props.options ?? {};
@@ -31,7 +34,7 @@ export default function createPlyr(
         plyr: newPlayer,
       })
       : undefined,
-    )
+    );
 
     onCleanup(() => {
       newPlayer.destroy();
