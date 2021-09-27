@@ -1,0 +1,82 @@
+{
+  "version": "0.0.0",
+  "types": "dist/types/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "keywords": [
+    "plyr",
+    "video-player",
+    "youtube",
+    "vimeo",
+    "hls",
+    "video",
+    "lion-plyr",
+    "html5-video",
+    "solid",
+    "solid-video"
+  ],
+  "name": "solid-plyr",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.9.1",
+    "cssnano": "^5.0.8",
+    "eslint": "^7.32.0",
+    "eslint-config-lxsmnsyc": "^0.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "postcss": "^8.3.8",
+    "pridepack": "^0.12.2",
+    "rollup-plugin-postcss": "^4.0.1",
+    "solid-js": "^1.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.1.3"
+  },
+  "scripts": {
+    "prepublish": "pridepack clean && pridepack build",
+    "build": "pridepack build",
+    "type-check": "pridepack check",
+    "lint": "pridepack lint",
+    "test": "pridepack test --passWithNoTests",
+    "clean": "pridepack clean",
+    "watch": "pridepack watch"
+  },
+  "description": "A simple HTML5, YouTube and Vimeo player (Plyr) for SolidJS",
+  "repository": {
+    "url": "https://github.com/git-ced/solid-plyr.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/git-ced/solid-plyr#readme",
+  "bugs": {
+    "url": "https://github.com/git-ced/solid-plyr/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Prince Neil Cedrick Castro",
+  "private": false,
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
+  "dependencies": {
+    "dashjs": "^4.1.0",
+    "hls.js": "^1.0.10",
+    "plyr": "^3.6.8"
+  }
+}
