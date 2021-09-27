@@ -1,32 +1,43 @@
-name: CI
-on: [push]
+name: Solid Plyr Deployment
+on:
+  pull_request:
+      types: [opened, synchronize]
+  push:
+    branches:
+      - main
+
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ['10.x', '12.x', '14.x']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Begin CI...
         uses: actions/checkout@v2
 
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: '16'
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
+      - name: Use cached node_modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Lint
-        run: yarn lint
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        env:
+          CI: true
 
-      - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+      - name: Begin bootstrap
+        run: yarn bootstrap
+        env:
+          CI: true
 
       - name: Build
-        run: yarn build
+        run: yarn build --scope=@lyon/drive-app --include-dependencies
+        env:
+          CI: true
+
