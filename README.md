@@ -61,50 +61,243 @@ import 'solid-plyr/dist/esm/index.css.map';
 
 ## Usage
 
-**Video playback through Solid Plyr Player**
+**Video playback using Solid Plyr Player**
 ```javascript
 import { SolidPlyr } from 'solid-plyr';
 
-const SOURCES = [
-  {
-    src: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8',
-    type: 'application/x-mpegURL',
-  },
-  {
-    src: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd',
-    type: 'application/dash+xml',
-  }
-];
+const SOURCE = {
+  type: 'video',
+  sources: [
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      type: 'video/mp4',
+      size: 720,
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
+      type: 'video/mp4',
+      size: 1080,
+    }
+  ]
+}
+
+const OPTIONS = {
+  autoplay: true,
+  muted: true,
+}
 
 export default function Player() {
   return (
-    <SolidPlyr sources={SOURCES} autoplay="muted" />
+    <SolidPlyr source={SOURCE} options={OPTIONS} />
   );
 }
 ```
+
 **Uncontrolled Solid Plyr Player**
 ```javascript
 import { UncontrolledSolidPlyr, createPlayer } from 'solid-plyr';
+import { createEffect } from 'solid-js';
 
-const SOURCES = [
-  {
-    src: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8',
-    type: 'application/x-mpegURL',
-  },
-  {
-    src: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd',
-    type: 'application/dash+xml',
-  }
-];
+const SOURCE = {
+  // ...
+}
+
+const OPTIONS = {
+  // ...
+}
 
 export default function Player() {
-  const { ref } = createPlayer({ 
-    sources: SOURCES,
-    muted: true,
+  const [ref, setRef] = createPlayer({ 
+    source: SOURCE,
+    options: OPTIONS,
   });
 
+  createEffect(() => {
+    const player = ref()?.plyr;
+
+    if (player) {
+      player.on('timeupdate', event => {
+        // Log current time while playing the playback
+        console.log(event.detail.plyr.currentTime);
+      });
+    }
+  })
+
   return (
-    <UncontrolledSolidPlyr playerRef={SOURCES} />
+    <UncontrolledSolidPlyr ref={setRef} />
+  );
+}
+```
+
+**Play YouTube Videos using Solid Plyr**
+```javascript
+import { SolidPlyr } from 'solid-plyr';
+
+const SOURCE = {
+  type: 'video',
+  sources: [
+    {
+      src: 'yWtFb9LJs3o',
+      provider: 'youtube'
+    }
+  ]
+}
+
+const OPTIONS = {
+  // ...
+}
+
+export default function Player() {
+  return (
+    <SolidPlyr source={SOURCE} options={OPTIONS} />
+  );
+}
+```
+
+**Play Vimeo Videos using Solid Plyr**
+```javascript
+import { SolidPlyr } from 'solid-plyr';
+
+const SOURCE = {
+  type: 'video',
+  sources: [
+    {
+      src: 'https://vimeo.com/533559247',
+      provider: 'vimeo'
+    }
+  ]
+}
+
+const OPTIONS = {
+  // ...
+}
+
+export default function Player() {
+  return (
+    <SolidPlyr source={SOURCE} options={OPTIONS} />
+  );
+}
+```
+
+**Video Playback with HLS using Solid Plyr**
+```javascript
+import { SolidHlsPlyr } from 'solid-plyr';
+
+const SOURCE = {
+  type: 'video',
+  sources: [
+    {
+      src:
+        'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8',
+      type: 'application/x-mpegURL'
+    }
+  ]
+}
+
+const OPTIONS = {
+  // ...
+}
+
+export default function Player() {
+  return (
+    <SolidHlsPlyr source={SOURCE} options={OPTIONS} />
+  );
+}
+```
+
+**Uncontrolled Video Playback with HLS using Solid Plyr**
+```javascript
+import { UncontrolledSolidPlyr, createHlsPlayer } from 'solid-plyr';
+import { createEffect } from 'solid-js';
+
+const SOURCE = {
+  // ...
+}
+
+const OPTIONS = {
+  // ...
+}
+
+export default function Player() {
+  const [ref, setRef] = createHlsPlayer({ 
+    source: SOURCE,
+    options: OPTIONS,
+  });
+
+  createEffect(() => {
+    const player = ref()?.plyr;
+
+    if (player) {
+      player.on('timeupdate', event => {
+        // Log current time while playing the playback
+        console.log(event.detail.plyr.currentTime);
+      });
+    }
+  })
+
+  return (
+    <UncontrolledSolidPlyr ref={setRef} />
+  );
+}
+```
+
+**Video Playback with Dash using Solid Plyr**
+```javascript
+import { SolidDashPlyr } from 'solid-plyr';
+
+const SOURCE = {
+  type: 'video',
+  sources: [
+    {
+      src: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+      type: 'application/dash+xml',
+    }
+  ]
+}
+
+const OPTIONS = {
+  // ...
+}
+
+export default function Player() {
+  return (
+    <SolidDashPlyr source={SOURCE} options={OPTIONS} />
+  );
+}
+```
+
+**Uncontrolled Video Playback with Dash using Solid Plyr**
+```javascript
+import { UncontrolledSolidPlyr, createDashPlayer } from 'solid-plyr';
+import { createEffect } from 'solid-js';
+
+const SOURCE = {
+  // ...
+}
+
+const OPTIONS = {
+  // ...
+}
+
+export default function Player() {
+  const [ref, setRef] = createDashPlayer({ 
+    source: SOURCE,
+    options: OPTIONS,
+  });
+
+  createEffect(() => {
+    const player = ref()?.plyr;
+
+    if (player) {
+      player.on('timeupdate', event => {
+        // Log current time while playing the playback
+        console.log(event.detail.plyr.currentTime);
+      });
+    }
+  })
+
+  return (
+    <UncontrolledSolidPlyr ref={setRef} />
   );
 }
 ```
