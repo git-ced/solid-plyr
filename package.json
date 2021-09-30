@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.3",
   "types": "dist/types/index.d.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -59,7 +59,7 @@
     "url": "https://github.com/git-ced/solid-plyr.git",
     "type": "git"
   },
-  "homepage": "https://github.com/git-ced/solid-plyr#readme",
+  "homepage": "https://solid-plyr.netlify.app/",
   "bugs": {
     "url": "https://github.com/git-ced/solid-plyr/issues"
   },
