@@ -37,7 +37,7 @@ jobs:
           CI: true
 
       - name: Build
-        run: yarn build --scope=@lyon/drive-app --include-dependencies
+        run: yarn build
         env:
           CI: true
 
