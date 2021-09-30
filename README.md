@@ -95,7 +95,7 @@ export default function Player() {
 
 **Uncontrolled Solid Plyr Player**
 ```javascript
-import { UncontrolledSolidPlyr, createPlayer } from 'solid-plyr';
+import { UncontrolledSolidPlyr, createPlyr } from 'solid-plyr';
 import { createEffect } from 'solid-js';
 
 const SOURCE = {
@@ -107,7 +107,7 @@ const OPTIONS = {
 }
 
 export default function Player() {
-  const [ref, setRef] = createPlayer({ 
+  const [ref, setRef] = createPlyr({ 
     source: SOURCE,
     options: OPTIONS,
   });
@@ -207,7 +207,7 @@ export default function Player() {
 
 **Uncontrolled Video Playback with HLS using Solid Plyr**
 ```javascript
-import { UncontrolledSolidPlyr, createHlsPlayer } from 'solid-plyr';
+import { UncontrolledSolidPlyr, createHlsPlyr } from 'solid-plyr';
 import { createEffect } from 'solid-js';
 
 const SOURCE = {
@@ -219,7 +219,7 @@ const OPTIONS = {
 }
 
 export default function Player() {
-  const [ref, setRef] = createHlsPlayer({ 
+  const [ref, setRef] = createHlsPlyr({ 
     source: SOURCE,
     options: OPTIONS,
   });
@@ -268,7 +268,7 @@ export default function Player() {
 
 **Uncontrolled Video Playback with Dash using Solid Plyr**
 ```javascript
-import { UncontrolledSolidPlyr, createDashPlayer } from 'solid-plyr';
+import { UncontrolledSolidPlyr, createDashPlyr } from 'solid-plyr';
 import { createEffect } from 'solid-js';
 
 const SOURCE = {
@@ -280,7 +280,7 @@ const OPTIONS = {
 }
 
 export default function Player() {
-  const [ref, setRef] = createDashPlayer({ 
+  const [ref, setRef] = createDashPlyr({ 
     source: SOURCE,
     options: OPTIONS,
   });
