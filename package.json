@@ -59,7 +59,7 @@
     "url": "https://github.com/git-ced/solid-plyr.git",
     "type": "git"
   },
-  "homepage": "https://github.com/git-ced/solid-plyr#readme",
+  "homepage": "https://solid-plyr.netlify.app/",
   "bugs": {
     "url": "https://github.com/git-ced/solid-plyr/issues"
   },
