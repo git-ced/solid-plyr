@@ -12,7 +12,7 @@ import { SourceInfo } from 'plyr';
 import {
   createPlyr,
   UncontrolledPlyr,
-} from '../../../src';
+} from 'solid-plyr';
 
 const mp4Src: SourceInfo = {
   type: 'video',
