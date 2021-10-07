@@ -1,11 +1,35 @@
 {
-  "version": "1.0.8",
+  "version": "1.0.9",
   "types": "dist/types/index.d.ts",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.jsx",
+  "main": "dist/cjs/production/index.jsx",
+  "module": "dist/esm/production/index.jsx",
   "exports": {
-    "require": "./dist/cjs/index.js",
-    "import": "./dist/esm/index.jsx"
+    ".": {
+      "development": {
+        "require": "./dist/cjs/development/index.jsx",
+        "import": "./dist/esm/development/index.jsx"
+      },
+      "require": "./dist/cjs/production/index.jsx",
+      "import": "./dist/esm/production/index.jsx"
+    },
+    "./dev": {
+      "production": {
+        "require": "./dist/cjs/production/index.jsx",
+        "import": "./dist/esm/production/index.jsx"
+      },
+      "require": "./dist/cjs/development/index.jsx",
+      "import": "./dist/esm/development/index.jsx"
+    },
+    "./esm": {
+      "development": "./dist/esm/development/index.jsx",
+      "production": "./dist/esm/production/index.jsx",
+      "default": "./dist/esm/production/index.jsx"
+    },
+    "./cjs": {
+      "development": "./dist/cjs/development/index.jsx",
+      "production": "./dist/cjs/production/index.jsx",
+      "default": "./dist/cjs/production/index.jsx"
+    }
   },
   "files": [
     "dist",
