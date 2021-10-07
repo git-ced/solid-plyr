@@ -116,7 +116,7 @@ export default function Player() {
     const player = ref()?.plyr;
 
     if (player) {
-      player.on('timeupdate', event => {
+      player.on('timeupdate', (event) => {
         // Log current time while playing the playback
         console.log(event.detail.plyr.currentTime);
       });
@@ -228,7 +228,7 @@ export default function Player() {
     const player = ref()?.plyr;
 
     if (player) {
-      player.on('timeupdate', event => {
+      player.on('timeupdate', (event) => {
         // Log current time while playing the playback
         console.log(event.detail.plyr.currentTime);
       });
@@ -289,7 +289,7 @@ export default function Player() {
     const player = ref()?.plyr;
 
     if (player) {
-      player.on('timeupdate', event => {
+      player.on('timeupdate', (event) => {
         // Log current time while playing the playback
         console.log(event.detail.plyr.currentTime);
       });

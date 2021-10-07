@@ -9,9 +9,6 @@ import checker from 'vite-plugin-checker';
 export default defineConfig({
   optimizeDeps: {
     exclude: [
-      '@tiptap/core',
-      '@tiptap/starter-kit',
-      '@tiptap/extension-bubble-menu',
     ],
   },
   plugins: [

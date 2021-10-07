@@ -20,8 +20,8 @@ const dashSrc: SourceInfo = {
     {
       src: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
       type: 'application/dash+xml',
-    }
-  ]
+    },
+  ],
 };
 
 export default function DashDemo(): JSX.Element {
@@ -35,12 +35,13 @@ export default function DashDemo(): JSX.Element {
 
     if (dashPlayer) {
       setLoading(false);
-      dashPlayer.on('timeupdate', event => {
+      dashPlayer.on('timeupdate', (event) => {
         const instance = event.detail.plyr;
+        // eslint-disable-next-line no-console
         console.log(instance.currentTime);
       });
     }
-  })
+  });
 
   return (
     <div>

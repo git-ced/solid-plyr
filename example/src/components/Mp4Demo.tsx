@@ -26,8 +26,8 @@ const mp4Src: SourceInfo = {
       src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4',
       type: 'video/mp4',
       size: 1080,
-    }
-  ]
+    },
+  ],
 };
 
 export default function Mp4Demo(): JSX.Element {
@@ -41,12 +41,13 @@ export default function Mp4Demo(): JSX.Element {
 
     if (mp4Player) {
       setLoading(false);
-      mp4Player.on('timeupdate', event => {
+      mp4Player.on('timeupdate', (event) => {
         const instance = event.detail.plyr;
+        // eslint-disable-next-line no-console
         console.log(instance.currentTime);
       });
     }
-  })
+  });
 
   return (
     <div>

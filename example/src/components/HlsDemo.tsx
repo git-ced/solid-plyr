@@ -20,9 +20,9 @@ const hlsSrc: SourceInfo = {
     {
       src:
         'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8',
-      type: 'application/x-mpegURL'
-    }
-  ]
+      type: 'application/x-mpegURL',
+    },
+  ],
 };
 
 export default function HlsDemo(): JSX.Element {
@@ -36,12 +36,13 @@ export default function HlsDemo(): JSX.Element {
 
     if (hlsPlayer) {
       setLoading(false);
-      hlsPlayer.on('timeupdate', event => {
+      hlsPlayer.on('timeupdate', (event) => {
         const instance = event.detail.plyr;
+        // eslint-disable-next-line no-console
         console.log(instance.currentTime);
       });
     }
-  })
+  });
 
   return (
     <div>

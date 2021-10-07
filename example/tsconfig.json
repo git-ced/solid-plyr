@@ -16,7 +16,6 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": false,
     "importHelpers": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
