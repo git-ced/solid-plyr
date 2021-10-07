@@ -1,14 +1,15 @@
 module.exports = {
-  "extends": [
-    'lxsmnsyc/typescript/react',
-  ],
+  "root": true,
   "parserOptions": {
     "project": "./tsconfig.eslint.json",
-    "tsconfigRootDir": __dirname,
   },
+  "extends": [
+    "lxsmnsyc/typescript/react"
+  ],
   "rules": {
     "import/no-extraneous-dependencies": [
-      "error", {
+      "error",
+      {
         "devDependencies": [
           "**/*.test.tsx",
           "vite.config.ts"
@@ -17,6 +18,7 @@ module.exports = {
     ],
     "camelcase": "off",
     "react/button-has-type": "off",
+    "react/destructuring-assignment": "off",
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react-hooks/rules-of-hooks": "off",
@@ -24,8 +26,6 @@ module.exports = {
     "react/prop-types": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/no-unknown-property": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/destructuring-assignment": "off"
+    "jsx-a11y/label-has-associated-control": "off"
   }
 };

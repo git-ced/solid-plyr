@@ -19,9 +19,9 @@ const vimeoSrc: SourceInfo = {
   sources: [
     {
       src: 'https://vimeo.com/533559247',
-      provider: 'vimeo'
-    }
-  ]
+      provider: 'vimeo',
+    },
+  ],
 };
 
 export default function VimeoDemo(): JSX.Element {
@@ -35,12 +35,13 @@ export default function VimeoDemo(): JSX.Element {
 
     if (vimeoPlayer) {
       setLoading(false);
-      vimeoPlayer.on('timeupdate', event => {
+      vimeoPlayer.on('timeupdate', (event) => {
         const instance = event.detail.plyr;
+        // eslint-disable-next-line no-console
         console.log(instance.currentTime);
       });
     }
-  })
+  });
 
   return (
     <div>

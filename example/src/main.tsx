@@ -14,6 +14,7 @@ import App from './App';
 
 // ANCHOR Styles
 import './main.css';
+import './lion-skin.css';
 
 setup({
   darkMode: 'class',

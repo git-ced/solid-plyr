@@ -1,10 +1,10 @@
 module.exports = {
+  "root": true,
   "extends": [
-    "lxsmnsyc/typescript/react"
+    "lxsmnsyc/typescript"
   ],
   "parserOptions": {
-    "project": "./tsconfig.eslint.json",
-    "tsconfigRootDir": __dirname
+    "project": "./tsconfig.eslint.json"
   },
   "rules": {
     "import/no-extraneous-dependencies": [

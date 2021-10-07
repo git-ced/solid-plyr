@@ -19,9 +19,9 @@ const youtubeSrc: SourceInfo = {
   sources: [
     {
       src: 'yWtFb9LJs3o',
-      provider: 'youtube'
-    }
-  ]
+      provider: 'youtube',
+    },
+  ],
 };
 
 export default function YoutubeDemo(): JSX.Element {
@@ -35,12 +35,13 @@ export default function YoutubeDemo(): JSX.Element {
 
     if (youtubePlayer) {
       setLoading(false);
-      youtubePlayer.on('timeupdate', event => {
+      youtubePlayer.on('timeupdate', (event) => {
         const instance = event.detail.plyr;
+        // eslint-disable-next-line no-console
         console.log(instance.currentTime);
       });
     }
-  })
+  });
 
   return (
     <div>

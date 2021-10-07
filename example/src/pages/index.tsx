@@ -19,7 +19,7 @@ const DashDemo = lazy(() => (
 ));
 
 export default function HomePage(): JSX.Element {
-  const [state, setState] = createSignal('hls');
+  const [state, setState] = createSignal('mp4');
 
   return (
     <div class="flex justify-center px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
