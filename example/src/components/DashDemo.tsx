@@ -12,7 +12,7 @@ import { SourceInfo } from 'plyr';
 import {
   createDashPlyr,
   UncontrolledPlyr,
-} from 'solid-plyr';
+} from '../../../src';
 
 const dashSrc: SourceInfo = {
   type: 'video',

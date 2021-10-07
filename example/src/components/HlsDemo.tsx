@@ -12,7 +12,7 @@ import { SourceInfo } from 'plyr';
 import {
   createHlsPlyr,
   UncontrolledPlyr,
-} from 'solid-plyr';
+} from '../../../src';
 
 const hlsSrc: SourceInfo = {
   type: 'video',
