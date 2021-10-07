@@ -2,10 +2,10 @@
   "version": "1.0.5",
   "types": "dist/types/index.d.ts",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/esm/index.jsx",
   "exports": {
     "require": "./dist/cjs/index.js",
-    "import": "./dist/esm/index.js"
+    "import": "./dist/esm/index.jsx"
   },
   "files": [
     "dist",
@@ -73,6 +73,7 @@
   "dependencies": {
     "dashjs": "^4.1.0",
     "hls.js": "^1.0.10",
+    "identity-obj-proxy": "^3.0.0",
     "plyr": "^3.6.8"
   }
 }
