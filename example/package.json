@@ -26,6 +26,7 @@
     "@twind/aspect-ratio": "^0.1.4",
     "@twind/forms": "^0.1.4",
     "@twind/typography": "^0.0.2",
+    "plyr": "^3.6.8",
     "rollup-plugin-visualizer": "^5.5.2",
     "solid-app-router": "^0.1.7",
     "solid-headless": "^0.6.3",
