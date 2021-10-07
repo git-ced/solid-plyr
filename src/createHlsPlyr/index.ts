@@ -16,8 +16,8 @@ import Hls from 'hls.js';
 import {
   CreatePlyrProps,
   CreatePlyrResult,
-} from '../createPlyr/index.d';
-import { HTMLPlyrVideoElement } from '../UncontrolledPlyr/index.d';
+} from '../createPlyr';
+import { HTMLPlyrVideoElement } from '../UncontrolledPlyr';
 
 declare global {
   interface Window { hls: Hls; }

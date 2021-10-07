@@ -25,7 +25,7 @@ export {
 export type {
   UncontrolledPlyrProps,
   HTMLPlyrVideoElement,
-} from './UncontrolledPlyr/index.d';
+} from './UncontrolledPlyr';
 export type {
   CreatePlyrProps,
-} from './createPlyr/index.d';
+} from './createPlyr';

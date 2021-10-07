@@ -16,8 +16,8 @@ import Dash from 'dashjs';
 import {
   CreatePlyrProps,
   CreatePlyrResult,
-} from '../createPlyr/index.d';
-import { HTMLPlyrVideoElement } from '../UncontrolledPlyr/index.d';
+} from '../createPlyr';
+import { HTMLPlyrVideoElement } from '../UncontrolledPlyr';
 
 export default function createDashPlyr(
   props: CreatePlyrProps

@@ -7,7 +7,7 @@ import createDashPlyr from '../createDashPlyr';
 // ANCHOR Types
 import {
   CreatePlyrProps,
-} from '../createPlyr/index.d';
+} from '../createPlyr';
 
 // ANCHOR Components
 import UncontrolledPlyr from '../UncontrolledPlyr';

@@ -1,8 +1,18 @@
 // ANCHOR Solid
 import { JSX, Show } from 'solid-js';
 
+// ANCHOR Plyr
+import Plyr from 'plyr';
+
 // ANCHOR Types
-import { UncontrolledPlyrProps } from './index.d';
+export type HTMLPlyrVideoElement = HTMLVideoElement
+  & { plyr?: Plyr }
+
+export interface UncontrolledPlyrProps
+  extends JSX.VideoHTMLAttributes<HTMLPlyrVideoElement> {
+  fallback?: JSX.Element;
+  isLoading?: boolean;
+}
 
 export default function UncontrolledPlyr(
   props: UncontrolledPlyrProps,
