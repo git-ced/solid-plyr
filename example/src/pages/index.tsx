@@ -14,9 +14,9 @@ const VimeoDemo = lazy(() => (
 const Mp4Demo = lazy(() => (
   import('../components/Mp4Demo')
 ));
-// const DashDemo = lazy(() => (
-//   import('../components/DashDemo')
-// ));
+const DashDemo = lazy(() => (
+  import('../components/DashDemo')
+));
 
 export default function HomePage(): JSX.Element {
   const [state, setState] = createSignal('hls');
@@ -38,11 +38,11 @@ export default function HomePage(): JSX.Element {
               <HlsDemo />
             )
           }
-          {/* {
+          {
             state() === 'dash' && (
               <DashDemo />
             )
-          } */}
+          }
           {
             state() === 'youtube' && (
               <YoutubeDemo />
